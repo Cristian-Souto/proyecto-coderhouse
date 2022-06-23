@@ -1,0 +1,251 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+}
+
+.header {
+   background-color: #191919; 
+    padding: 1rem;
+    height: 14vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /*propiedad para dejar fija la cebecera si hacemos scroll */
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+/*Aplico un min 100vh para poder realizar un scroll y ver el navbar fijo */
+.container {
+    height: 100vh;
+    width: 100%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    border: 1px solid black;
+}
+
+.img-seccion {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.img-logo {
+    width: 50px;
+    border-radius: 50%;
+    margin: 0 0 0 14px;
+}
+
+.nav-menu-lista {
+    list-style: none;
+    padding: 1.2rem;
+}
+
+.nav-menu-item {
+    /*utilizo la propiedad display inline-block para colocar los elementos li en linea (uno al lado del otro) y poder aplicarles un margen o padding*/
+    display: inline-block;
+    margin-right: 10px;
+    font-weight: 500;
+    font-size: 1.2rem;
+}
+.nav-menu-link {
+    text-decoration: none;
+    color: white;
+    text-transform: capitalize;
+    transition: ease 1.5s;
+    position: relative;
+}
+
+/*ANIMACION LINKS NAVBAR*/
+.nav-menu-link::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: -6px;
+    background-color: #fff;
+    transform: scale(0);
+    transition: all 0.4s;
+}
+
+.nav-menu-link:hover::before {
+    transform: scale(1);
+    transition: all 0.4s;
+}
+
+/*INICIO SECCION DE ESTILOS FOOTER */
+.footer {
+    height: 20vh;
+    background-color: #191919;
+}
+
+.footer-social-media {
+    height: 10vh;
+    width: 150px;
+    margin: 0 auto;
+}
+
+.footer-copyright {
+    color: #fff;
+    font-size: 1rem;
+    text-align: center;
+    padding: 15px 0;
+}
+
+.footer .lista-items-social {
+    list-style: none;
+    height: 10vh;
+    padding: 20px;
+    width: 150px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.item-social:hover {
+    opacity: .7;
+}
+
+.footer li a {
+    color: #f3f3f3;
+    text-decoration: none;
+}
+
+.footer-contacto {
+    text-align: left;
+    font-weight: bolder;
+}
+
+.footer hr {
+    width: 50vw;
+    margin: 0 auto;
+}
+/*FIN ESTILOS SECCION DEL FOOTER*/
+
+/*INICIO ESTILOS SECCION SOBRE MI*/
+.about-me{
+    padding-top: 100px;
+    width: 45%;
+    margin: auto;
+}
+.about-me-title{
+    font-size: 3.5vw;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    text-align: center;
+}
+.about-me-text{
+    color: #191919;
+    font-size: 1.5vw;
+    line-height: 1.8;
+    text-align: justify;
+    padding: 1rem;
+}
+.container-image{
+    width: 45%;
+    padding: 1rem;
+}
+.img-sobremi{
+    width:40vw;
+    height: 100%;
+    padding-top: 100px;
+    object-fit: cover;
+}
+/*FIN ESTILOS SECCION SOBRE MI*/
+
+/*INICIO SECCION PORTFOLIO CON GRID*/
+.grid-galeria{
+    padding-top: 150px;
+    margin: 0 auto 0;
+    height:100%;
+    width: 95%;
+    display: grid;
+    gap: 4px;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: 150px 250px 300px 200px;
+}
+.container-galeria-image-1{
+    grid-column: 1/4;
+    grid-row: 1/3;
+}
+.container-galeria-image-2{
+ grid-column: 4/6;
+ grid-row: 1/3; 
+}
+.container-galeria-image-3{
+    grid-column: 1/3;  
+}
+.container-galeria-image-4{
+    grid-column: 3/5;
+    grid-row: 3/4; 
+}
+.container-galeria-image-6{
+    grid-column: 1/4;
+}
+.container-galeria-image-7{
+    grid-column: 4/6;
+}
+.grid-galeria-image {
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+   border-radius: 4px ;
+}
+.grid-galeria-image:hover{
+    opacity: .7;
+    transition: all 1.2s;
+    border-left:1px solid rebeccapurple ;
+}
+/*FIN SECCION PORTFOLIO CON GRID*/
+
+/*MEDIA QUERIES SECCION SOBRE MI*/
+@media  (max-width:780px) {
+    .container{
+       flex-direction: column;
+    }
+    /*SECCION ACERCA*/
+    .about-me{
+        padding-top: 155px;
+        width: 90%;
+    }
+    .about-me-title{
+        font-size: 2rem;
+    }
+    .about-me-text{
+        font-size: 1.2rem;
+        width: 100%;
+    }
+    .img-sobremi{
+        padding: 0;
+        display: none;
+        width: 100%;
+    }
+    /*SECCION PORTFOLIO*/    
+    .grid-galeria{
+        display: flex;
+        flex-direction: column;
+    }
+    /*FOOTER*/
+    .footer-copyright,hr{
+        display: none;
+    }
+    .footer{
+        height: auto;
+    }
+}
+
+/*NAVBAR CON  DISPLAY NONE A MENOS DE 600PX*/
+@media (max-width:600px){
+    .nav {
+        display: none;
+    }
+}
