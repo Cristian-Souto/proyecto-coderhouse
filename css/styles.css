@@ -199,11 +199,38 @@ body {
    object-fit: cover;
    border-radius: 4px ;
 }
-.grid-galeria-image:hover{
+/* .grid-galeria-image:hover{
     opacity: .7;
     transition: all 1.2s;
-}
+} */
 /*FIN SECCION PORTFOLIO CON GRID*/
+
+/*ANIMACION DE LA GALERIA*/
+.overlay{
+   position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+.overlay::before{
+    content: "Imagen";
+    color: #f3f3f3;
+    font-size: 1.5rem;
+    position: absolute;
+    top:0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #5b40f3a6;
+    transform: translate(100%);
+    transition: transform .4s;
+}
+.overlay:hover::before{
+    transform: translate(0);
+}
+/*FIN ANIMACION GALERIA*/
 
 /*MEDIA QUERIES SECCION SOBRE MI*/
 @media  (max-width:780px) {
