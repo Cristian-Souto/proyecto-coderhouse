@@ -30,7 +30,6 @@ body {
     margin: auto;
     display: flex;
     align-items: center;
-    border: 1px solid black;
 }
 
 .img-seccion {
@@ -203,7 +202,6 @@ body {
 .grid-galeria-image:hover{
     opacity: .7;
     transition: all 1.2s;
-    border-left:1px solid rebeccapurple ;
 }
 /*FIN SECCION PORTFOLIO CON GRID*/
 
